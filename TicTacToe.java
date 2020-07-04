@@ -1,26 +1,28 @@
 import java.awt.*;
-import java.awt.event.ActionListener;
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.awt.event.*;
 
 public class TicTacToe extends JFrame implements ActionListener{
-
+    public static int clickedAmt =0;
     public JFrame f;
 
     public TicTacToe(){
+        super("TicTacToe Buttons");
+        setResizable(false);
+        setSize(100, 100);
+        Init();
     } 
 
     public void actionPerformed(ActionEvent event){
+
     }
 
-    public void HelloWorld(){
+    public void Init(){
         JFrame f=new JFrame("Tic-Tac-Toe");  
         int xcoord = 20;
         int ycoord = 20;
-        int clickAmt =0;
+       // int clickAmt =0;
         ImageIcon imgX = new ImageIcon("/Users/Wendy/Documents/Code/Visual_Studio_Code/X.png");
         ImageIcon imgO = new ImageIcon("/Users/Wendy/Documents/Code/Visual_Studio_Code/O.png");
         
@@ -35,8 +37,8 @@ public class TicTacToe extends JFrame implements ActionListener{
             
             btn.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e) {
-                    clickAmt++;
-                    if(clickAmt%2== 0){
+                    clickedAmt++;
+                    if(clickedAmt%2== 0){
                         btn.setIcon(imgO);
                     }else{
                         btn.setIcon(imgX);
@@ -52,11 +54,11 @@ public class TicTacToe extends JFrame implements ActionListener{
 		f.setLayout(null);    
 		f.setVisible(true);    
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
-        System.out.println("Hello World");
+       // System.out.println("Hello World");
     }
 
     public static void main(String[] args) {    
         TicTacToe ttt = new TicTacToe();  
-        ttt.HelloWorld();
+       // ttt.HelloWorld();
 	}    
 }
